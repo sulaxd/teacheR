@@ -13,6 +13,13 @@
 #   Check Package:             'Cmd + Shift + E'
 #   Test Package:              'Cmd + Shift + T'
 
+#' Save the question's answer
+#'
+#' @param x A character
+#' @param dir_path A character
+#' @examples
+#' fileName <- saveAnswer('this is a answer', tempdir())
+#' loadAnswer(fileName, tempdir())
 saveAnswer <- function(x, dir_path="answer"){
   if(!is.character(x)) stop("x must be a character!")
   if(!dir.exists(dir_path)) dir.create(dir_path)
@@ -22,6 +29,13 @@ saveAnswer <- function(x, dir_path="answer"){
   return(tmpName)
 }
 
+#' load the question's answer
+#'
+#' @param x A character
+#' @param dir_path A character
+#' @examples
+#' fileName <- saveAnswer('this is a answer', tempdir())
+#' loadAnswer(fileName, tempdir())
 loadAnswer <- function(x, dir_path="answer"){
   file.edit(paste0(dir_path,"/",x,".R"))
 }

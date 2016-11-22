@@ -20,6 +20,7 @@
 #' @examples
 #' fileName <- saveAnswer('this is a answer', tempdir())
 #' loadAnswer(fileName, tempdir())
+#' @export
 saveAnswer <- function(x, dir_path="answer"){
   if(!is.character(x)) stop("x must be a character!")
   if(!dir.exists(dir_path)) dir.create(dir_path)
@@ -36,6 +37,7 @@ saveAnswer <- function(x, dir_path="answer"){
 #' @examples
 #' fileName <- saveAnswer('this is a answer', tempdir())
 #' loadAnswer(fileName, tempdir())
+#' @export
 loadAnswer <- function(x, dir_path="answer"){
   file.edit(paste0(dir_path,"/",x,".R"))
 }
